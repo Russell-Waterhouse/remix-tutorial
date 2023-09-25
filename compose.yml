@@ -6,3 +6,13 @@ services:
     image: remix-tutorial
     ports: 
       - "3000:3000"
+    volumes:
+      - type: volume
+        source: node_modules
+        target: /usr/src/app/node_modules
+      - type: bind
+        source: .
+        target: /usr/src/app
+
+volumes:
+  node_modules:
